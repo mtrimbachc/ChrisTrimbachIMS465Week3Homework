@@ -4,7 +4,7 @@ public class Ball : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody2D rigidBody = null;
-    private float moveSpeed = 1f;
+    [SerializeField] private float moveSpeed = 1f;
 
     private bool launched = false;
     private Vector3 momentumVector = Vector3.up;
@@ -14,7 +14,7 @@ public class Ball : MonoBehaviour
     // Complete
     // Ball should only move once its been launched
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (launched)
         {

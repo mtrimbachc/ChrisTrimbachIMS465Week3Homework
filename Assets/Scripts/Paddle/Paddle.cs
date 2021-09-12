@@ -45,6 +45,7 @@ public class Paddle : MonoBehaviour
             {
                 Ball ball = activeBall.GetComponent<Ball>();
                 ball.Launch();
+                ballLaunched = true;
             }
         }
 
@@ -55,6 +56,7 @@ public class Paddle : MonoBehaviour
         if (Ball != null && BallLauncher != null)
         {
             activeBall = Instantiate(Ball, BallLauncher.transform);
+            ballLaunched = false;
         }
     }
 }
