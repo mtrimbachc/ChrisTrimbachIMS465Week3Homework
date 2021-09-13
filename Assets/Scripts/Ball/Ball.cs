@@ -25,6 +25,11 @@ public class Ball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         momentumVector = Vector3.Reflect(momentumVector, collision.contacts[0].normal); // change direction on impact
+
+        if (collision.transform.tag == "Piece")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 
     public void Launch()
