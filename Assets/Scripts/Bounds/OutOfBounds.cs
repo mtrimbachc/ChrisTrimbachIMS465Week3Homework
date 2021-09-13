@@ -21,6 +21,7 @@ public class OutOfBounds : MonoBehaviour
 
         if (collision.tag == "Ball")
         {
+
             Destroy(collision.gameObject);
 
             player.SpawnBall();

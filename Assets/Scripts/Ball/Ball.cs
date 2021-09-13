@@ -8,12 +8,18 @@ public class Ball : MonoBehaviour
 
     private bool launched = false;
     private Vector3 momentumVector = Vector3.up;
+    public Vector3 nextPosition;
 
     //TODO: 
 
     // Complete
     // Ball should only move once its been launched
     // Add code to move ball along with code to delete pieces upon colliding with one
+
+    public void Start()
+    {
+        nextPosition = transform.position;
+    }
 
     public void FixedUpdate()
     {
@@ -25,11 +31,17 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        momentumVector = Vector3.Reflect(momentumVector, collision.contacts[0].normal); // change direction on impact
-
-        if (collision.transform.tag == "Piece")
+        if (launched)
         {
-            Destroy(collision.gameObject);
+            momentumVector = Vector3.Reflect(momentumVector, collision.contacts[0].normal); // change direction on impact
+            nextPosition = transform.position + momentumVector;
+
+            //Debug.Log(transform.position + "vs: " + nextPosition);
+
+            if (collision.transform.tag == "Piece")
+            {
+                Destroy(collision.gameObject);
+            }
         }
     }
 

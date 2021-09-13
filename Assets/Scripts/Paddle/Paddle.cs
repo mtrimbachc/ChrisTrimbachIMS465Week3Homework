@@ -56,7 +56,7 @@ public class Paddle : MonoBehaviour
         if (Ball != null && BallLauncher != null)
         {
             activeBall = Instantiate(Ball, BallLauncher.transform);
-            activeBall.transform.position = new Vector3(activeBall.transform.position.x, activeBall.transform.position.y + 0.25f, activeBall.transform.position.z);
+            activeBall.transform.position = new Vector3(activeBall.transform.position.x, activeBall.transform.position.y, activeBall.transform.position.z);
             ballLaunched = false;
         }
     }
