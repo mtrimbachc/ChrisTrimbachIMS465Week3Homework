@@ -3,11 +3,11 @@
 public class Paddle : MonoBehaviour
 {
     //TODO
-    // A launched ball will then bounce around, changing its direction upon any collision
 
     //Complete
     // Move paddle left and right using keyboard keys, mapping is up to you
     // Paddle should be able to launch the ball upon space bar being pressed
+    // A launched ball will then bounce around, changing its direction upon any collision
 
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private GameObject Ball;
