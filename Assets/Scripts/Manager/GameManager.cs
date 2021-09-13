@@ -18,5 +18,20 @@ public class GameManager : MonoBehaviour
 
 
     //TODO
+
+    // Complete
     //Using const data defined above "Instantiate" new pieces to fill the view with
+
+    private void Awake()
+    {
+        for (int i = 0; i < TOTAL_ROWS; i++)
+        {
+            for (int j = 0; j < PIECE_COUNT_PER_ROW; j++)
+            {
+                Vector3 nextPos = new Vector3(pieces.transform.position.x + PIECE_LENGTH * j, pieces.transform.position.y - ROW_HEIGHT * i, pieces.transform.position.z);
+
+                Instantiate(piecePrefab, nextPos, pieces.transform.rotation ,pieces);
+            }
+        }
+    }
 }
