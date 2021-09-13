@@ -9,10 +9,11 @@ public class Ball : MonoBehaviour
     private bool launched = false;
     private Vector3 momentumVector = Vector3.up;
 
-    //TODO: Add code to move ball along with code to delete pieces upon colliding with one
+    //TODO: 
 
     // Complete
     // Ball should only move once its been launched
+    // Add code to move ball along with code to delete pieces upon colliding with one
 
     public void FixedUpdate()
     {
