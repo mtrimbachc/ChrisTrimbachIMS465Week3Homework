@@ -36,7 +36,7 @@ public class Paddle : MonoBehaviour
             transform.Translate(Vector3.right * Time.deltaTime * moveSpeed, Space.World);
         }
 
-        var xpos = Mathf.Clamp(transform.position.x, -10.5f, 10.5f);
+        var xpos = Mathf.Clamp(transform.position.x, -5.25f, 5.25f);
         transform.position = new Vector3(xpos, transform.position.y, transform.position.z);
 
         if (activeBall != null && !ballLaunched)
@@ -56,6 +56,7 @@ public class Paddle : MonoBehaviour
         if (Ball != null && BallLauncher != null)
         {
             activeBall = Instantiate(Ball, BallLauncher.transform);
+            activeBall.transform.position = new Vector3(activeBall.transform.position.x, activeBall.transform.position.y + 0.25f, activeBall.transform.position.z);
             ballLaunched = false;
         }
     }
